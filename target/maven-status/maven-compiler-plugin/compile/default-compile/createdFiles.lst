@@ -1,4 +1,7 @@
-com\dhamacher\javafxsandbox\FXMLController.class
+com\dhamacher\javafxsandbox\MessageDialog.class
+com\dhamacher\javafxsandbox\ProductController.class
 com\dhamacher\javafxsandbox\MainApp.class
 com\dhamacher\javafxsandbox\model\Product_.class
+com\dhamacher\javafxsandbox\service\ProductService.class
 com\dhamacher\javafxsandbox\model\Product.class
+com\dhamacher\javafxsandbox\HomeController.class

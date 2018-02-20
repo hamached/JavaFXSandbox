@@ -6,18 +6,18 @@
 package com.dhamacher.javafxsandbox.service;
 
 import com.dhamacher.javafxsandbox.model.Product;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 /**
  *
  * @author dhamacher
  */
-public class ProductService {
+public class ProductService { 
     
-    private EntityManager em;
-    private EntityManagerFactory emf;
     
     public ProductService()
     {
@@ -29,8 +29,8 @@ public class ProductService {
                         double price,
                         String color)
     {
-        this.emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox_jar_1.0PU");
-        this.em = emf.createEntityManager();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox_jar_1.0PU");
+        EntityManager em = emf.createEntityManager();
         
         em.getTransaction().begin();
         
@@ -45,6 +45,20 @@ public class ProductService {
         
         em.close();
         emf.close();        
+    }
+    
+    public List<Product> GetAllProducts()
+    {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox_jar_1.0PU");
+        EntityManager em = emf.createEntityManager();
+        Query q = em.createNamedQuery("GetAllProducts");
+        
+        List<Product> list = q.getResultList();      
+        
+        em.close();
+        emf.close();   
+        
+        return list;
     }
     
 }
