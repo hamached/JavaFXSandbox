@@ -5,12 +5,11 @@
  */
 package com.dhamacher.javafxsandbox.model;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
@@ -20,7 +19,12 @@ import javax.persistence.Table;
  */
 @Entity
 @Table
-@NamedQuery(query = "SELECT p FROM Product p", name = "GetAllProducts")
+@NamedQueries
+({
+@NamedQuery(query = "SELECT p FROM Product p", name = "GetAllProducts"),
+@NamedQuery(query = "SELECT p FROM Product p WHERE p.category = :category",         
+        name = "GetAllProductsByCategory")
+})
 public class Product {
     
     @Id
@@ -31,6 +35,15 @@ public class Product {
     private String category;
     private double price;
     private String color;
+    private int stock;
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
     
     public Product()
     {

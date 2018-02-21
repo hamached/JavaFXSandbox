@@ -29,7 +29,7 @@ public class ProductService {
                         double price,
                         String color)
     {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox_jar_1.0PU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox");
         EntityManager em = emf.createEntityManager();
         
         em.getTransaction().begin();
@@ -49,7 +49,7 @@ public class ProductService {
     
     public List<Product> GetAllProducts()
     {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox_jar_1.0PU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox");
         EntityManager em = emf.createEntityManager();
         Query q = em.createNamedQuery("GetAllProducts");
         
@@ -60,5 +60,20 @@ public class ProductService {
         
         return list;
     }
-    
+
+    public List<Product> GetAllProductsByCategory(String category)
+    {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox");
+        EntityManager em = emf.createEntityManager();
+        Query q = em.createNamedQuery("GetAllProductsByCategory");
+        q.setParameter("category", category);
+        
+        List<Product> list = q.getResultList();      
+        
+        em.close();
+        emf.close();   
+        
+        return list;
+        
+    }
 }
