@@ -68,7 +68,7 @@ public class ProductService {
         Query q = em.createNamedQuery("GetAllProductsByCategory");
         q.setParameter("category", category);
         
-        List<Product> list = q.getResultList();      
+        List<Product> list = q.getResultList();       
         
         em.close();
         emf.close();   

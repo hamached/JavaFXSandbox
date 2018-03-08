@@ -11,39 +11,39 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="com.dhamacher.javafxsandbox.HomeViewController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dhamacher.javafxsandbox.HomeViewController">
     <stylesheets>
         <URL value="@/styles/homeview.css" />
     </stylesheets>
    <children>
       <HBox prefHeight="98.0" prefWidth="600.0">
          <children>
-            <Button fx:id="storageCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Storage" textAlignment="CENTER">
+            <Button fx:id="storageCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Storage" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="childrenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Children" textAlignment="CENTER">
+            <Button fx:id="childrenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Children" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="livingRoomCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Living Room" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="livingRoomCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Living Room" textAlignment="CENTER" wrapText="true">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="kitchenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Kitchen" textAlignment="CENTER">
+            <Button fx:id="kitchenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Kitchen" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="bathCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Bath" textAlignment="CENTER">
+            <Button fx:id="bathCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Bath" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="babyCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="Baby" textAlignment="CENTER">
+            <Button fx:id="babyCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Baby" textAlignment="CENTER">
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
@@ -54,10 +54,10 @@
          <children>
             <ScrollPane prefHeight="200.0" prefWidth="200.0">
                <content>
-                  <ListView fx:id="productListView" prefHeight="298.0" prefWidth="197.0" />
+                  <ListView fx:id="productListView" prefHeight="298.0" prefWidth="300.0" />
                </content>
             </ScrollPane>
-            <VBox prefHeight="302.0" prefWidth="400.0">
+            <VBox prefHeight="302.0" prefWidth="237.0">
                <children>
                   <ImageView fx:id="productImageView" fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>

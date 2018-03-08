@@ -48,7 +48,8 @@ public class Product {
     public Product()
     {
         super();
-    }
+    } 
+   
 
     public int getId() {
         return Id;
