@@ -18,32 +18,56 @@
    <children>
       <HBox prefHeight="98.0" prefWidth="600.0">
          <children>
+<<<<<<< HEAD
             <Button fx:id="storageCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#CategoryClickedEvent" prefHeight="50.0" prefWidth="75.0" text="Storage" textAlignment="CENTER">
+=======
+            <Button fx:id="storageCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Storage" textAlignment="CENTER">
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
+<<<<<<< HEAD
             <Button fx:id="childrenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#CategoryClickedEvent" prefHeight="50.0" prefWidth="75.0" text="Children" textAlignment="CENTER">
+=======
+            <Button fx:id="childrenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Children" textAlignment="CENTER">
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
+<<<<<<< HEAD
             <Button fx:id="livingRoomCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#CategoryClickedEvent" prefHeight="50.0" prefWidth="75.0" text="Living Room" textAlignment="CENTER" wrapText="true">
+=======
+            <Button fx:id="livingRoomCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Living Room" textAlignment="CENTER" wrapText="true">
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
+<<<<<<< HEAD
             <Button fx:id="kitchenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#CategoryClickedEvent" prefHeight="50.0" prefWidth="75.0" text="Kitchen" textAlignment="CENTER">
+=======
+            <Button fx:id="kitchenCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Kitchen" textAlignment="CENTER">
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
+<<<<<<< HEAD
             <Button fx:id="bathCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#CategoryClickedEvent" prefHeight="50.0" prefWidth="75.0" text="Bath" textAlignment="CENTER">
+=======
+            <Button fx:id="bathCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Bath" textAlignment="CENTER">
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
             </Button>
+<<<<<<< HEAD
             <Button fx:id="babyCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#CategoryClickedEvent" prefHeight="50.0" prefWidth="75.0" text="Baby" textAlignment="CENTER">
+=======
+            <Button fx:id="babyCategoryButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#sortByCategory" onMouseClicked="#sortByCategory" onTouchPressed="#sortByCategory" prefHeight="50.0" prefWidth="75.0" text="Baby" textAlignment="CENTER">
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
@@ -54,7 +78,11 @@
          <children>
             <ScrollPane prefHeight="200.0" prefWidth="200.0">
                <content>
+<<<<<<< HEAD
                   <ListView fx:id="productListView" onMouseClicked="#GetSelectedItem" onSwipeDown="#ScrollDown" prefHeight="298.0" prefWidth="300.0" />
+=======
+                  <ListView fx:id="productListView" prefHeight="298.0" prefWidth="300.0" />
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
                </content>
             </ScrollPane>
             <VBox prefHeight="302.0" prefWidth="237.0">

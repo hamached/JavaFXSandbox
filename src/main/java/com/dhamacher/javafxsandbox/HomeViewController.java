@@ -13,16 +13,25 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+<<<<<<< HEAD
 import javafx.event.EventType;
+=======
+import javafx.event.ActionEvent;
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBar;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+<<<<<<< HEAD
 import javafx.scene.input.SwipeEvent;
+=======
+import javafx.scene.input.TouchEvent;
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
 
 /**
  * FXML Controller class
@@ -83,13 +92,26 @@ public class HomeViewController implements Initializable {
             
         }
         catch(Exception e)
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Attention!");
-            alert.setHeaderText("Exception Thrown!");
-            alert.setContentText(e.getMessage().toString());
-            alert.showAndWait();
+        {            
+            MessageDialog.MessagePopup("EXCEPTION", e.getMessage().toString());            
         }
+    }    
+
+    @FXML
+    private void sortByCategory(ActionEvent event) {
+         String category = null;
+        try
+        {
+            ProductService service = new ProductService();
+            Button btn = (Button) event.getSource();
+            category = btn.getText();
+            products.clear();
+            productListView.getItems().clear();            
+            products.addAll(service.GetAllProductsByCategory(btn.getText()));            
+            productListView.setItems(products);
+            productListView.refresh();            
+        }
+<<<<<<< HEAD
     }  
 
     @FXML
@@ -117,5 +139,12 @@ public class HomeViewController implements Initializable {
     @FXML
     private void ScrollDown(SwipeEvent event) {
                
+=======
+        catch(Exception e)
+        {
+            MessageDialog.MessagePopup("ERROR", "The category " + category 
+                    + " does not match");
+        }
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
     }
 }

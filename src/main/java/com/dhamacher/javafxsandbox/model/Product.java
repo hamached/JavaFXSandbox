@@ -5,6 +5,7 @@
  */
 package com.dhamacher.javafxsandbox.model;
 
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +26,7 @@ import javax.persistence.Table;
 @NamedQuery(query = "SELECT p FROM Product p WHERE p.category = :category",         
         name = "GetAllProductsByCategory")
 })
-public class Product {
+public class Product implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,7 +49,8 @@ public class Product {
     public Product()
     {
         super();
-    }
+    } 
+   
 
     public int getId() {
         return Id;

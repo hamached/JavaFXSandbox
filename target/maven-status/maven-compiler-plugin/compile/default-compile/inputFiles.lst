@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\dhamacher\Documents\NetBeansProjects\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\ProductController.java
 C:\Users\dhamacher\Documents\NetBeansProjects\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\MainApp.java
 C:\Users\dhamacher\Documents\NetBeansProjects\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\MessageDialog.java
@@ -5,3 +6,12 @@ C:\Users\dhamacher\Documents\NetBeansProjects\JavaFXSandbox\src\main\java\com\dh
 C:\Users\dhamacher\Documents\NetBeansProjects\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\model\Product.java
 C:\Users\dhamacher\Documents\NetBeansProjects\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\StartViewController.java
 C:\Users\dhamacher\Documents\NetBeansProjects\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\HomeViewController.java
+=======
+C:\Users\dhamacher\Documents\GitHub\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\MainApp.java
+C:\Users\dhamacher\Documents\GitHub\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\StartViewController.java
+C:\Users\dhamacher\Documents\GitHub\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\ProductController.java
+C:\Users\dhamacher\Documents\GitHub\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\service\ProductService.java
+C:\Users\dhamacher\Documents\GitHub\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\model\Product.java
+C:\Users\dhamacher\Documents\GitHub\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\HomeViewController.java
+C:\Users\dhamacher\Documents\GitHub\JavaFXSandbox\src\main\java\com\dhamacher\javafxsandbox\MessageDialog.java
+>>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
