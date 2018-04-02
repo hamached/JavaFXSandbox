@@ -1,11 +1,9 @@
 com\dhamacher\javafxsandbox\MessageDialog.class
 com\dhamacher\javafxsandbox\MainApp.class
 com\dhamacher\javafxsandbox\service\ProductService.class
-<<<<<<< HEAD
 com\dhamacher\javafxsandbox\HomeViewController$1.class
-=======
->>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
 com\dhamacher\javafxsandbox\HomeViewController.class
 com\dhamacher\javafxsandbox\model\Product.class
 com\dhamacher\javafxsandbox\ProductController.class
+com\dhamacher\javafxsandbox\DeliveryViewController.class
 com\dhamacher\javafxsandbox\StartViewController.class

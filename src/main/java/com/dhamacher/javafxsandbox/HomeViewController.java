@@ -13,25 +13,19 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-<<<<<<< HEAD
-import javafx.event.EventType;
-=======
 import javafx.event.ActionEvent;
->>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-<<<<<<< HEAD
 import javafx.scene.input.SwipeEvent;
-=======
-import javafx.scene.input.TouchEvent;
->>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
 
 /**
  * FXML Controller class
@@ -40,18 +34,6 @@ import javafx.scene.input.TouchEvent;
  */
 public class HomeViewController implements Initializable {
 
-    @FXML
-    private Button storageCategoryButton;
-    @FXML
-    private Button childrenCategoryButton;
-    @FXML
-    private Button livingRoomCategoryButton;
-    @FXML
-    private Button kitchenCategoryButton;
-    @FXML
-    private Button bathCategoryButton;
-    @FXML
-    private Button babyCategoryButton;
     @FXML
     private ListView<Product> productListView;
     @FXML
@@ -69,6 +51,8 @@ public class HomeViewController implements Initializable {
             FXCollections.observableArrayList(); 
     
     private ProductService productService;
+    @FXML
+    private ComboBox<?> categoryDropDown;
 
     /**
      * Initializes the controller class.
@@ -97,9 +81,9 @@ public class HomeViewController implements Initializable {
         }
     }    
 
-    @FXML
-    private void sortByCategory(ActionEvent event) {
-         String category = null;
+    private void sortByCategory(ActionEvent event) 
+    {
+        String category = null;
         try
         {
             ProductService service = new ProductService();
@@ -110,11 +94,9 @@ public class HomeViewController implements Initializable {
             products.addAll(service.GetAllProductsByCategory(btn.getText()));            
             productListView.setItems(products);
             productListView.refresh();            
-        }
-<<<<<<< HEAD
+        } catch(Exception e) {}
     }  
 
-    @FXML
     private void CategoryClickedEvent(MouseEvent event) {
         EventType<?> type = event.getEventType();
         String typeName = type.getName();    
@@ -129,22 +111,9 @@ public class HomeViewController implements Initializable {
         {
             MessageDialog.MessagePopup("ERROR", e.getMessage());            
         }       
-    }  
+    }     
 
     @FXML
     private void GetSelectedItem(MouseEvent event) {
-        
-    }
-
-    @FXML
-    private void ScrollDown(SwipeEvent event) {
-               
-=======
-        catch(Exception e)
-        {
-            MessageDialog.MessagePopup("ERROR", "The category " + category 
-                    + " does not match");
-        }
->>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
     }
 }
