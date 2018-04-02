@@ -8,7 +8,6 @@ package com.dhamacher.javafxsandbox;
 import com.dhamacher.javafxsandbox.model.Product;
 import com.dhamacher.javafxsandbox.service.ProductService;
 import java.net.URL;
-import java.util.Observable;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +17,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.util.Callback;
 
 /**
  * FXML Controller class
@@ -49,7 +47,8 @@ public class ProductController implements Initializable {
         {            
             ProductService ps = new ProductService();
             products.addAll(ps.GetAllProducts());
-            productListView.setItems(products);
+            productListView.setItems(products);        
+            
         }
         catch(Exception e)
         {
@@ -58,32 +57,6 @@ public class ProductController implements Initializable {
             alert.setHeaderText("Exception Thrown!");
             alert.setContentText(e.getMessage().toString());
             alert.showAndWait();
-        }
-        
-    }  
-
-    @FXML
-    private void handleProductSaveButton(ActionEvent event) {
-        try
-        {
-            ProductService ps = new ProductService();
-            ps.CreateProduct(
-                    productNameField.getText(), 
-                    productCategoryField.getText(), 
-                    Double.parseDouble(productPriceField.getText()), 
-                    productColorField.getText());
-            productListView.refresh();
-            MessageDialog.MessagePopup("INFO", "Product successfully created.");
-        }
-        catch(Exception e)
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Attention!");
-            alert.setHeaderText("Exepction Thrown!");
-            alert.setContentText(e.getMessage().toString());
-            alert.showAndWait();
-        }
-    }
-    
-    
+        } 
+    }   
 }
