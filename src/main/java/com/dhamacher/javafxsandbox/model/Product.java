@@ -42,7 +42,7 @@ public class Product implements Serializable {
     private String category;
     private double price;
     private String color;
-    private int stock;
+    private int stock;    
 
     public int getStock() {
         return stock;
@@ -50,7 +50,7 @@ public class Product implements Serializable {
 
     public void setStock(int stock) {
         this.stock = stock;
-    }
+    }  
     
     public Product()
     {

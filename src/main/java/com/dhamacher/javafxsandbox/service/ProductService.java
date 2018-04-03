@@ -49,7 +49,7 @@ public class ProductService {
         }
         catch(Exception ex)
         {
-            MessageDialog.MessagePopup("ERROR", ex.getMessage());
+            MessageDialog.MessagePopup(MessageDialog.Status.EXCEPTION, ex.getMessage());
         }       
         return list;
     }
