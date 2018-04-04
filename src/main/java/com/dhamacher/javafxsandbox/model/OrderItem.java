@@ -13,7 +13,24 @@ public class OrderItem {
     
     private String name;      
     private int quantity;
-    private double price;
+    private double pricePerItem;
+    private double totalPrice;
+
+    public double getPricePerItem() {
+        return pricePerItem;
+    }
+
+    public void setPricePerItem(double pricePerItem) {
+        this.pricePerItem = pricePerItem;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
+    }
 
     public int getQuantity() {
         return quantity;
@@ -23,11 +40,12 @@ public class OrderItem {
         this.quantity = quantity;
     }
     
-    public OrderItem(int id, String name, int quanity, double price)
+    public OrderItem(int id, String name, int qty, double price)
     {        
         this.name = name;
         this.quantity = quantity;
-        this.price = price;
+        this.pricePerItem = price;
+        this.totalPrice = price * qty;
     } 
     
     public OrderItem()
@@ -40,15 +58,7 @@ public class OrderItem {
 
     public void setName(String name) {
         this.name = name;
-    }   
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }  
+    }    
     
     @Override
     public String toString()

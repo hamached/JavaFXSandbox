@@ -201,7 +201,8 @@ public class HomeViewController implements Initializable {
             OrderItem item = new OrderItem();            
             item.setName(p.getName());
             item.setQuantity(qty);
-            item.setPrice(p.getPrice());
+            item.setPricePerItem(p.getPrice());
+            item.setTotalPrice(qty * p.getPrice());
             currentOrder.add(item);
         }
         catch (Exception e)
@@ -216,11 +217,14 @@ public class HomeViewController implements Initializable {
     private void viewCurrentOrder(ActionEvent event) 
     {   
         try
-        {             
-            OrderViewController controller = new OrderViewController(currentOrder);
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/OrderView.fxml"));           
-            loader.setController(controller);
-            Parent root = (Parent)loader.load();            
+        {          
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/OrderView.fxml"));            
+            Parent root = (Parent)loader.load(); 
+            /* Get controller and set order ist */
+            OrderViewController controller = loader.<OrderViewController>getController();
+            controller.setOrderItemList(currentOrder);
+            
+            /* Load Scene */
             Scene scene = new Scene(root);
             scene.getStylesheets().add("/styles/orderview.css");            
             Stage stage = new Stage();
