@@ -24,7 +24,13 @@ import javax.persistence.Table;
 ({
 @NamedQuery(query = "SELECT p FROM Product p", name = "GetAllProducts"),
 @NamedQuery(query = "SELECT p FROM Product p WHERE p.category = :category",         
-        name = "GetAllProductsByCategory")
+        name = "GetAllProductsByCategory"),
+@NamedQuery(query = "Select DISTINCT p.category from Product p", 
+        name = "GetCategories"),
+@NamedQuery(query = "SELECT p FROM Product p WHERE p.category = :category AND"
+        + " p.price <= :price", name = "GetAllProductsByCategoryAndPrice"),
+@NamedQuery(query = "SELECT p FROM Product p WHERE p.price <= :price", 
+        name = "GetAllProductsByPrice")
 })
 public class Product implements Serializable {
     
@@ -36,7 +42,7 @@ public class Product implements Serializable {
     private String category;
     private double price;
     private String color;
-    private int stock;
+    private int stock;    
 
     public int getStock() {
         return stock;
@@ -44,7 +50,7 @@ public class Product implements Serializable {
 
     public void setStock(int stock) {
         this.stock = stock;
-    }
+    }  
     
     public Product()
     {
@@ -96,6 +102,5 @@ public class Product implements Serializable {
     public String toString()
     {
         return name;
-    }
-    
+    }    
 }

@@ -45,11 +45,32 @@
             <artifactId>derbyclient</artifactId>
             <version>10.11.1.1</version>
         </dependency>
-
     </dependencies>
 
     <build>
         <plugins>
+            <!--Toolchain feature-->          
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-toolchains-plugin</artifactId>
+                <version>1.1</version>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>toolchain</goal>
+                    </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                  <toolchains>
+                    <jdk>
+                      <version>1.8</version>
+                      <vendor>oracle</vendor>
+                    </jdk>
+                  </toolchains>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -114,8 +135,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <compilerArguments>
                         <bootclasspath>${sun.boot.class.path}${path.separator}${java.home}/lib/jfxrt.jar</bootclasspath>
                     </compilerArguments>
