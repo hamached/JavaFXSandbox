@@ -5,7 +5,10 @@
  */
 package com.dhamacher.javafxsandbox.service;
 
+import com.dhamacher.javafxsandbox.MessageDialog;
 import com.dhamacher.javafxsandbox.model.Product;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -49,15 +52,22 @@ public class ProductService {
     
     public List<Product> GetAllProducts()
     {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox");
-        EntityManager em = emf.createEntityManager();
-        Query q = em.createNamedQuery("GetAllProducts");
-        
-        List<Product> list = q.getResultList();      
-        
-        em.close();
-        emf.close();   
-        
+        List<Product> list = new ArrayList<Product>();
+        try
+        {
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.dhamacher_JavaFXSandbox");
+            EntityManager em = emf.createEntityManager();
+            Query q = em.createNamedQuery("GetAllProducts");
+
+            list = q.getResultList(); 
+            
+            em.close();
+            emf.close(); 
+        }
+        catch(Exception ex)
+        {
+            MessageDialog.MessagePopup("ERROR", ex.getMessage());
+        }       
         return list;
     }
 
@@ -68,7 +78,7 @@ public class ProductService {
         Query q = em.createNamedQuery("GetAllProductsByCategory");
         q.setParameter("category", category);
         
-        List<Product> list = q.getResultList();      
+        List<Product> list = q.getResultList();       
         
         em.close();
         emf.close();   

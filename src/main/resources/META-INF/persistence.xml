@@ -4,11 +4,12 @@
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>com.dhamacher.javafxsandbox.model.Product</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/JavaFXSandbox"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/JavaFXSandbox" />
+      <!--<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/JavaFXSandbox?prepareStatement=false?sendUnicode=false" />-->
       <property name="javax.persistence.jdbc.user" value="app"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
       <property name="javax.persistence.jdbc.password" value="app2018"/>
-      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
     </properties>
   </persistence-unit>
 </persistence>

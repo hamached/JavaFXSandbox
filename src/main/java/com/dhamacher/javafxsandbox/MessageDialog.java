@@ -18,8 +18,8 @@ public class MessageDialog {
         if (type == "ERROR")
         {                  
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Attention!");
-            alert.setHeaderText("Exception Thrown!");
+            alert.setTitle("Error!");
+            alert.setHeaderText("An Error occured.");
             alert.setContentText(message);
             alert.showAndWait();
         }
@@ -28,6 +28,14 @@ public class MessageDialog {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Information!");
             alert.setHeaderText("Info:");
+            alert.setContentText(message);
+            alert.showAndWait();
+        }
+        else if (type == "EXCEPTION")
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Exception!");
+            alert.setHeaderText("Details:");
             alert.setContentText(message);
             alert.showAndWait();
         }
