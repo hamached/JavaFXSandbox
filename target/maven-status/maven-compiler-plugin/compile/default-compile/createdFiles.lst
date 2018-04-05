@@ -1,11 +1,27 @@
+com\dhamacher\javafxsandbox\OrderViewController.class
 com\dhamacher\javafxsandbox\MessageDialog.class
 com\dhamacher\javafxsandbox\MainApp.class
+<<<<<<< HEAD
 com\dhamacher\javafxsandbox\service\ProductService.class
 <<<<<<< HEAD
 com\dhamacher\javafxsandbox\HomeViewController$1.class
 =======
 >>>>>>> 46c6a6f10d4a698614e8dd9e36e245723e3d8c37
+=======
+com\dhamacher\javafxsandbox\HomeViewController$1.class
+com\dhamacher\javafxsandbox\OrderViewController$1$1.class
+com\dhamacher\javafxsandbox\HomeViewController$2.class
+com\dhamacher\javafxsandbox\OrderConfirmationViewController$1.class
+com\dhamacher\javafxsandbox\model\Delivery.class
+com\dhamacher\javafxsandbox\MessageDialog$1.class
+com\dhamacher\javafxsandbox\OrderConfirmationViewController.class
+com\dhamacher\javafxsandbox\service\ProductService.class
+com\dhamacher\javafxsandbox\MessageDialog$Status.class
+>>>>>>> 6c5f833c44746f749623e96cb7c7f6f8b2fd095b
 com\dhamacher\javafxsandbox\HomeViewController.class
 com\dhamacher\javafxsandbox\model\Product.class
-com\dhamacher\javafxsandbox\ProductController.class
+com\dhamacher\javafxsandbox\OrderViewController$1.class
+com\dhamacher\javafxsandbox\DeliveryViewController.class
 com\dhamacher\javafxsandbox\StartViewController.class
+com\dhamacher\javafxsandbox\model\OrderItem.class
+com\dhamacher\javafxsandbox\HomeViewController$3.class

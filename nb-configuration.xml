@@ -14,5 +14,9 @@ That way multiple projects can share the same settings (useful for formatting ru
 Any value defined here will override the pom.xml file value but is only applicable to the current project.
 -->
         <netbeans.compile.on.save>all</netbeans.compile.on.save>
+<<<<<<< HEAD
+=======
+        <netbeans.hint.license>gpl30</netbeans.hint.license>
+>>>>>>> 6c5f833c44746f749623e96cb7c7f6f8b2fd095b
     </properties>
 </project-shared-configuration>

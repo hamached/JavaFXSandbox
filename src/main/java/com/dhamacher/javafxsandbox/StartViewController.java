@@ -9,8 +9,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
@@ -29,6 +27,10 @@ public class StartViewController implements Initializable {
         // TODO
     }    
 
+    /**
+     * This function is the starting point of the ordering system
+     * @param event 
+     */
     @FXML
     private void handleGetStartedButtonAction(ActionEvent event) {
         try
@@ -40,11 +42,8 @@ public class StartViewController implements Initializable {
         }
         catch (IOException e)
         {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Attention!");
-            alert.setHeaderText("Exception Thrown!");
-            alert.setContentText(e.getMessage().toString());
-            alert.showAndWait();
+            MessageDialog.MessagePopup(MessageDialog.Status.EXCEPTION, 
+                    e.getMessage());          
         }
     }
 }
