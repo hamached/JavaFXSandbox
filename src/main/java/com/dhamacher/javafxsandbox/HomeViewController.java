@@ -26,6 +26,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -68,7 +69,12 @@ public class HomeViewController implements Initializable {
     private Label upperPriceRange;
     @FXML
     private AnchorPane homeViewAnchorPane;
-
+    @FXML
+    private Spinner<Integer> quantitySpinner;
+    @FXML
+    private Button exitButton;
+    
+    
     /* Class variables */
     private ProductService productService;    
     private final ObservableList<Product> products = 
@@ -76,8 +82,7 @@ public class HomeViewController implements Initializable {
     private final ObservableList<String> categories = 
             FXCollections.observableArrayList();     
     private List<OrderItem> currentOrder;
-    @FXML
-    private Spinner<Integer> quantitySpinner;
+    
     
     /**
      * Initializes the controller and its resources.
@@ -106,7 +111,7 @@ public class HomeViewController implements Initializable {
                     //Image image = new Image(file.toURI().toString());
                     //productImageView.setImage(image);
                     //NumberFormat formatter = NumberFormat.getCurrencyInstance();
-                    
+                    quantitySpinner.getValueFactory().setValue(1);
                     priceLabel.setText(String.valueOf(newProduct.getPrice()));
                     colorLabel.setText(newProduct.getColor());
                     categoryLabel.setText(newProduct.getCategory());
@@ -249,8 +254,7 @@ public class HomeViewController implements Initializable {
         try
         {
             if (confirmed == 1)
-            {
-                //OrderViewController controller = new OrderViewController(currentOrder);
+            {                
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/DeliveryView.fxml"));  
                 Parent root = (Parent)loader.load();            
                 Scene scene = new Scene(root);
@@ -261,8 +265,39 @@ public class HomeViewController implements Initializable {
                 stage.setTitle("Schedule a Delivery");
                 stage.setScene(scene);  
                 stage.show();  
-            }
+            }           
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/OrderConfirmationView.fxml"));            
+            Parent root = (Parent)loader.load(); 
+            /* Get controller and set order ist */
+            OrderConfirmationViewController controller = loader.<OrderConfirmationViewController>getController();
+            controller.setOrderItemList(currentOrder);
+
+            /* Load Scene */
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("/styles/orderconfirmationview.css");            
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setTitle("Order Overview");
+            stage.setScene(scene);  
+            stage.show();           
         }
-        catch (Exception e) {}
+        catch (Exception e) 
+        {
+            MessageDialog.MessagePopup(MessageDialog.Status.EXCEPTION,
+                    e.getMessage());
+        }
+    }
+
+    @FXML
+    private void closeWindow(ActionEvent event) 
+    {
+        int status = MessageDialog.MessagePopup(MessageDialog.Status.CONFIRMATION,
+                "Do you really want to cancel the order?");
+        if (status == 1)
+        {
+            Stage stage = (Stage)exitButton.getScene().getWindow();          
+            stage.close();
+        }
     }
 }

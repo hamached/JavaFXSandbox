@@ -28,7 +28,7 @@
             <ComboBox fx:id="categoryDropDown" layoutX="14.0" layoutY="95.0" prefHeight="28.0" prefWidth="238.0" promptText="Select Category..." />
             <Slider fx:id="priceSlider" layoutX="413.0" layoutY="97.0" max="5000.0" prefHeight="24.0" prefWidth="299.0" />
             <Label layoutX="278.0" layoutY="100.0" prefHeight="18.0" prefWidth="111.0" text="Set Price Range" />
-            <Button layoutX="834.0" layoutY="14.0" mnemonicParsing="false" text="EXIT" />
+            <Button fx:id="exitButton" layoutX="834.0" layoutY="14.0" mnemonicParsing="false" onAction="#closeWindow" text="EXIT" />
             <Label fx:id="upperPriceRange" layoutX="719.0" layoutY="101.0" prefHeight="17.0" prefWidth="137.0" text="\$0000" />
          </children>
       </AnchorPane>
